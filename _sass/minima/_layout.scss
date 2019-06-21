@@ -1,30 +1,55 @@
+// @import 'phone';
+@import 'responsive-font';
+
 
 //wrapper all
-.header-wrapper {
-  display: grid;
-  
-  height: 4668px;
-  @media (min-width: 40rem) {
-    grid-template: 5rem repeat(5, 1fr) 40rem / 1fr repeat(6, minmax(auto, 10rem)) 1fr;
-  }
+.wrapper {
+  // @media (min-width: 40rem) {
+  //   grid-template: 5rem repeat(5, 1fr) 40rem / 1fr repeat(6, minmax(auto, 10rem)) 1fr;
+  // }
   background-color: white;
+
+  // display: grid;
+  // grid-template-areas: 
+  //   ". header header .",
+  //   ". about about .",
+  //   ". services .",
+  //   ". reason .",
+  //   ". past-client .",
+  //   ". testimonial .",
+  //   " . footer .";
+  // grid-template-rows: auto;
+  // grid-template-columns: 
+
 }
+
+
+
 
 .header-logo {
   background-color: white;
-  grid-column: span 4;
-  padding-top: 1rem;
-  grid-column: 1/2;
+  grid-column: 2/6;
+
+  @media screen and (min-width: 200px) and (max-width: 480px) {
+  }
+
+}
+
+.phone-title {
+    display: none;
+}
+
+.toggle-menu {
+    display: none;
 }
 
 .header-nav{
+  padding-top: 1em;
   background-color: white;
-  grid-column: span 8;
-  width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2rem repeat(10, 1fr) 2rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .img-logo{
@@ -33,53 +58,46 @@
 
 
 .header-menu {
-  grid-column: 2/3;
-  grid-row: 1/2;
-  display: grid;
-  grid-template-columns: auto repeat(5, 1fr) 150px;
-
+  grid-column: 7/12;
+  justify-self: end;
 }
 
-.menu-1{
-  grid-column: 3/4;
-  margin: auto auto auto auto;
-}
-
-.menu-2{
-  grid-column: 4/5;
-  margin: auto auto auto auto;
-}
-
-.menu-3{
-  grid-column: 5/6;
-  margin: auto auto auto auto;
-}
-
-.menu-4{
-  grid-column: 6/7;
-  margin: auto auto auto auto;
-  justify-items: center;
-  justify-content: center;
-  align-items: center;
-}
 
 
 .nav-menu {
-  margin-top: auto;
-  margin-bottom: auto;
+  display: flex;
   font-weight: bold;
   font-size: 14px;
   color: #19243c;
-  text-align: center;
-  align-self: center;
+  justify-content: space-evenly;
+  align-items: center;
 
+  @media screen and (min-width: 200px) and (max-width: 480px) {
+    .list-menu {
+      display: none;
+    }
+  }
+
+  a {
+  color: #9b9b9b;
+  text-decoration: none;
+    &:hover{
+      color: #19243c;
+    }
+  }
+
+   .text-white {
+    color: white;
+  }
 }
 
 .grey {
   color: #9b9b9b;
 }
 
-
+.about-us{
+  display: none;
+}
 
 
 //button contact nav menu
@@ -90,7 +108,8 @@
   border-radius: 2px;
   background-color: $pale-red;
   color: white;
-  
+  padding-top: 7px;
+  text-align: center;
 }
 
 /* content */
@@ -98,52 +117,32 @@
 //row 1
 
 .row-1 {
-  width: 1440px;
   background-color: white;
-  grid-column: span 8;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: center;
+  grid-gap: 1em; 
+
+  @media screen and (min-width: 500px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .title-row-1 { 
-  grid-column: 1/2;
   align-items: center;
+  justify-self: center;
+  padding-left: 1em;
   //margin-top: 180px;
 }
 
-.row-2 {
-  background-color: white;
-  width: 1440px;
-  grid-column: span 8;
-  display: grid;
-  background-image: url(/assets/logo/bg.svg);
-  background-repeat: no-repeat;
-  grid-template-columns: 300px auto 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-
 .isi-row2 {
-  grid-column: 2/3;
+  grid-column: span 10;
   text-align: center;
-}
-
-.main-title{
-  margin-top: 180px;
-  font-family: 'Poppins' bold;
-  font: bold 52px 'Poppins' ;
-  color: $text-blue-color ;
 }
 
 .main-desc{
   grid-column: 1/2;
-  margin-top: -25rem;
-  width: 445px;
-  height: 128px;
+  margin-top: 0;
+  max-width: 23em;
 }
 
 .text-desc {
@@ -153,6 +152,7 @@
   letter-spacing: 0.15px;
   font: light 18px 'Montserrat';
   font-weight: 300;
+  font-size: 1em;
 }
 
 .box-desc2 {
@@ -165,9 +165,19 @@
 
 .main-illustration {
   object-fit: contain;
-  width: 691px;
-  grid-column: 2/3;
-  grid-row: 1/2;
+  margin-top: 1em;
+  @media screen and (min-width: 200px) and (max-width: 480px) {
+    grid-row: 1/2;
+  }
+ 
+}
+
+.main-title{
+  margin-top: 180px;
+  font-family: 'Poppins' bold;
+  font: bold 3vw 'Poppins' ;
+  color: $text-blue-color;
+  margin-top: 2em;
 }
 
 .button-work {
@@ -177,21 +187,50 @@
   background-color: $pale-red;
   text-align: center;
   vertical-align: middle;
+
+  @media screen and (max-width: 1000px) {
+    width: 7em;
+    height: 2.5em;
+  }
 }
 
 .outer-button {
   grid-column: 1/2;
-  margin-top: -18rem;
+  display: table-cell;
 }
 
 .p {
   text-align: center;
   font: bold 18px 'Montserrat';
-  margin-top: 20px;
   margin-bottom: auto;
   color: white;
 
+  @media screen and (max-width: 1000px) {
+    font-size: 12px;
+  }
 }
+
+.row-2 {
+  background-color: white;
+  width: 100%;
+  display: grid;
+  background-image: url(/assets/logo/bg.svg);
+  background-repeat: no-repeat;
+  text-align: center;
+  grid-gap: 30px;
+  margin: 0 auto;
+  max-width: 960px;
+
+  @media screen and (min-width: 481px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));    
+  }
+  
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));  
+    max-width: 400px;  
+  }
+}
+
 
 .subtitle-2 {
   font:  18px  'Montserrat';
@@ -205,34 +244,37 @@
 }
 
 .title-2 {
-  font: bold 46px 'Poppins';
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
+  font-family: 'Poppins';
+  font-weight: bold;
   
   color: #19243c;
+  @include responsive-font(5vw, 20px, 48px);
+
 }
 
 .box-services {
-  width: 242px;
-  height: 236px;
   border-radius: 4px;
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.05);
   background-color: #ffffff;
-  margin-bottom: 68px;
   margin-top: 5%;
-  margin-left: 5%;
-  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 
+  @media screen and (max-width: 480px) {
+    width: 120px;
+    height: 116px;    
+  }
 }
 
 .text-services {
   width: 170px;
-  margin-top: 1.5em;
-  margin-left: auto;
-  margin-right: auto;
   font-family: 'Montserrat';
+  margin: auto;
   font-size: 16px;
   font-weight: 700;
   font-style: bold;
@@ -243,35 +285,20 @@
 }
 
 .outer-box {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-left: 5%;
-  margin-right: 5%;
+
   text-align: center;
-  justify-items: center;
-  margin-top: 5em;
+  justify-self: center;
 }
 
-.b1 {
-  grid-column: 1/2;
+.first-title {
+  grid-column: span 6;
+  grid-row: 1/2;
+  padding: 1em;
+  text-align: center;
 }
-
-.b2 {
-  grid-column: 2/3;
-}
-
-.b3 {
-  grid-column: 3/4;
-}
-
-.b4 {
-  grid-column: 1/2;
-}
-
-
 
 .icon {
-  width: 58px;
+  width: 120px;
   height: 95px;
   object-fit: contain;
   border-radius: 2.5px;
@@ -284,13 +311,16 @@
 // CSS row 3 //
 .row-3 {
   background-color: white;
-  grid-column: span 8;
-  grid-template-columns: 15rem auto 15rem;
   display: grid;
-  grid-template: 20rem auto / 1fr 1fr;
-  width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-items: center;
+  grid-gap: 4em;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.child-row-3 {
+  display: flex;
 }
 
 .row-3-judul {
@@ -301,22 +331,8 @@
   margin-bottom: 5rem;
 }
 
-.row-3-1 {
-  grid-column: 1/2;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
-
-.row-3-2 {
-  grid-column: 2/3;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
 
 .box-img {
-  grid-column: span 2;
-  margin-left: 40%;
-  margin-top: 80px;
 }
 
 .img-choose { 
@@ -326,15 +342,13 @@
 }
 
 .box-desc-choose {
-  grid-column: 3/6;
-  margin-left: -15%;
-  margin-top: 6rem;;
+  margin-left: 1em;
+  margin-top: 1em
 }
 
 .reason-title{
 
   font-family: Poppins;
-  font-size: 20px;
   font-weight: 600;
   font-style: bold;
   font-stretch: normal;
@@ -342,6 +356,7 @@
   font-variant: bold;
   letter-spacing: 0.1px;
   color: #19243c;
+  @include responsive-font(4vw, 10px, 20px);
 }
 
 .reason-desc{
@@ -360,11 +375,15 @@
 // CSS row 4
 
 .row-4{
-  grid-column: span 8;
 
   background-color: white;
- 
-}
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 2em;
+  padding: 1em;
+  max-width: 960px;
+  margin: 0 auto;
+ }
 
 
 
@@ -372,7 +391,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 1140px;
-  height: 432px;
+//   height: 432px;
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
   background-color: #fcfcfe;
@@ -401,7 +420,6 @@
 .past-client-title-4 {
   
   font-family: Poppins;
-  font-size: 52px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -415,7 +433,6 @@
 .past-client-title {
   
   font-family: Poppins;
-  font-size: 52px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -431,22 +448,28 @@
 }
 
 .client-logo{
- 
-    width: 111.1px;
-    height: 58px;
-    object-fit: contain;
-    margin-right: 5rem;
+  width: 111.1px;
+  height: 58px;
+  object-fit: contain;
+  margin-right: 5rem;
 }
 
 // CSS row 5
 
 .row-5{
-  grid-column: span 8;
   background-color: white;
   justify-items: center;
   display: grid;
   grid-template-rows: 10rem 80% auto;
   text-align: center;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  padding: 1em;
+  grid-template-rows: minmax(min-content, max-content);
 }
 
 .box-text-row5 {
@@ -459,11 +482,9 @@
 
 
 .box-testimonial {
-  grid-row: 2/3;
-  grid-column: 2/8;
   margin-top: 2rem;
   justify-items: center;
- 
+  margin: auto
 }
 
 .text-company {
@@ -503,7 +524,7 @@
   border-radius: 4px;
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.05);
   background-color: #ffffff;
-  
+  margin: 0 auto
 }
 
 .card-1 {
@@ -512,10 +533,10 @@
   border-radius: 4px;
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.05);
   background-color: #ffffff;
-  margin-left: auto;
-  margin-right: auto;
   position: relative;
-  top: -20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .img-testi {
@@ -545,6 +566,8 @@
   color: rgba(25, 36, 60, 0.46);
   margin-left: auto;
   margin-right: auto;
+  margin: 0 auto;
+  padding: 1em
 }
 
 // CSS footer
@@ -553,7 +576,6 @@
   background-color: white;
   grid-column: span 8;
   display: grid;
-  grid-template-rows: auto 30rem;
 }
 
 
@@ -573,7 +595,7 @@
 }
 
 .rect-footer-full {
-  width: 1440px;
+  width: 100%;
   height: 556px;
   border-top-right-radius: 65px;
   background-color: #19243c;
@@ -596,6 +618,8 @@
   padding-top: 4rem;
   margin-left: auto;
   margin-right: auto;
+
+  @include responsive-font(5vw, 20px, 48px);
 
 }
 

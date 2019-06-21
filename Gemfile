@@ -9,6 +9,10 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 gem "jekyll", "~> 3.8.5"
+gem 'jekyll-font-awesome-sass'
+gem 'font-awesome-sass'
+gem 'jekyll-slim'
+gem 'slim', github: 'slim-template/slim'
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 
