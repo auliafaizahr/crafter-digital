@@ -33,3 +33,16 @@
   </div>
 
 </footer>
+
+<script type="javascript/text">
+  $(window).scroll(function(){
+      if ($(window).scrollTop() >= 70) {
+        $('header-logo').css("position", "fixed");
+        $('header-menu').css("position", "fixed");
+      }
+      else {
+        $('header-logo').attr("position", "");
+        $('header-menu').attr("position", "");
+      }
+  });
+</script>
